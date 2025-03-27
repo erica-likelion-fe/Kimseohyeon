@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LoignPage</title>
+    <style>
+       @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR&display=swap');
+       * { font-family: "IBM Plex Sans KR", sans-serif;}
+
+      body { 
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+
+      form {
+        background-color: rgb(247, 249, 255);
+        width: 70%;
+        max-width: 700px;
+        border-radius: 10px;
+        border: 2px solid rgb(4, 4, 56);
+        border-color: rgb(4, 4, 56);
+        text-align: center;
+      }
+
+      legend {
+        font-size: 20pt;
+        color: rgb(4, 4, 56);
+        font-weight: bold;
+      }
+
+      input[type="submit"] {
+        background-color: rgb(4, 4, 56);
+        color: rgb(229, 234, 255);
+      }
+
+      fieldset {
+            border: none;
+            padding: 0;
+      }
+
+      label, input, select, textarea {
+            display: block;
+            width: 80%;
+            margin: 10px auto;
+      }
+
+      input, select, textarea {
+            padding: 8px;
+            border: 1px solid rgb(229, 234, 255);
+            border-radius: 5px;
+      }
+      .part-container {
+             display: flex;
+             justify-content: space-between;
+             width: 80%;
+             margin: 10px auto;
+             padding: 5px 0;
+      }
+      .part-container label {
+            display: flex;
+            white-space: nowrap;
+            align-items: center;
+            cursor: pointer;
+            gap: 5px;
+            padding: 5px 10px;
+      }
+   </style>
+
+</head>
+<body>
+
+    <form action="/submit" method="POST">
+
+        <fieldset>
+
+        <legend>회원가입</legend>
+        
+        <label for="username">아이디:</label>
+        <input type="text" id="username" name="username" placeholder="아이디 입력" required autofocus><br>
+
+        <label for="password">비밀번호:</label>
+        <input type="password" id="password" name="password" placeholder="8자 이상 입력"
+        required minlength="8"><br>
+
+        <label for="email">이메일:</label>
+        <input type="email" name="email" placeholder="example@example.com" required><br>
+    
+        <label for="part">선택:</label>
+        <select id="part" name="part">
+
+         <option value="frontend">프론트엔드</option>
+         <option value="backend">백엔드</option>
+         <option value="design">디자인</option>
+         
+       </select><br>
+
+       <label for="selfIntroduce">자기소개:</label>
+       <textarea id="selfIntroduce" name="selfIntroduce" placeholder="자유롭게 입력하세요" rows="2" cols="20"></textarea><br>
+
+        
+       <div class="part-container">
+       <label><input type="checkbox" name="hobby" value="reading"> 책 읽기</label>
+       <label><input type="checkbox" name="hobby" value="shopping"> 쇼핑 하기</label>
+       <label><input type="checkbox" name="hobby" value="movie"> 영화 감상</label>
+       <label><input type="checkbox" name="hobby" value="music"> 노래 듣기</label>
+       </div>
+
+        <span><input type="submit" value="가입하기">
+        <input type="reset"  value="초기화"></span>
+
+        </fieldset>
+        </form>
+</body>
+</html>
